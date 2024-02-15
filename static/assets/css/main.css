@@ -1,0 +1,160 @@
+body{
+    background-color: #3c5337;
+}
+.home-upload-btn{
+    background-color: rgb(252, 209, 2);
+    border: 0 solid black;
+    border-radius: 100px;
+    cursor: pointer!important;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    text-align: initial;
+    padding: 10px 20px;
+    font-weight: bolder;
+}
+
+.main-section-home{
+    padding: 20px 30px;
+    /* min-height: 700px; */
+    background-color: #3c5337;
+    color: white;
+}
+
+.img-section-main{
+    position: relative;
+    flex-grow: 1;
+    padding: 0px 20px;
+}
+
+.img-items-section{
+    position: absolute;
+}
+
+.img-static-big{
+    right: 0;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    border: 15px solid black;
+    border-radius: 50px;
+}
+
+.img-change-small{
+    left: -40px;
+    bottom: 0;
+    width: 60%;
+    height: 70%;
+    border: 15px solid black;
+    border-radius: 50px;
+}
+
+.title-section-home{
+    width: 60%;
+}
+
+.innvator-span{
+    color: #fcd102;
+}
+
+.home-title-1{
+    font-size: 57px;
+}
+
+.home-title-2{
+    font-size: 16px;
+}
+
+.navbar-custom{
+    background-color: #384c2c;
+}
+
+.navbar-brand{
+    font-weight: bolder;
+    color: #fcd102 !important;
+}
+.navbar-brand:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: #fcd102 !important;
+}
+.nav-item a{
+    color: #fcd102 !important;
+    text-decoration: none !important;
+}
+.nav-item a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+.login-alert-home{
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.gallery-main-section{
+    padding: 20px 30px;
+    background-color: #3c5337;
+    color: white;
+}
+
+.img-galery{
+    width: 150px;
+    height: 150px;
+}
+
+.img-container{
+    width: 300px;
+    /* border: 1px solid rgb(252, 209, 2); */
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-container span{
+    border-top: 1px solid white;
+}
+.img-container-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img-container-modal img{
+    width: unset;
+    height: unset;
+    display: flex;
+    max-width: 1000px;
+}
+.img-container-modal span{
+    color: white;
+}
+.img-content-preview{
+    background: transparent;
+    border: 0px;
+    
+}
+
+@media (width <= 380px) {
+    .main-section-home{
+        justify-content: center;
+        text-align: center;
+    }
+    .title-section-home{
+        padding: 0px !important;
+        display: flex;
+        flex-direction: column;
+    }
+    .home-upload-btn{
+        justify-content: center;
+    }
+
+    .gallery-main-section{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+}

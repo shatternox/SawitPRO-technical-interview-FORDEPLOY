@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="d-flex main-section-home" id="msh">
+    <div class="title-section-home p-5">
+        <h1>
+            Welcome <span class="innvator-span">{{ username }}</span>
+        </h1>
+        <h1 class="home-title-1">
+            Secure <span class="innvator-span">Image Storage</span> system
+        </h1>
+        <h3 class="home-title-2">
+            All images will be encrypted in our database upon upload. You can only view the pictures you have uploaded and cannot see other people's pictures.
+        </h3>
+        <button type="button" class="home-upload-btn mt-5" data-bs-toggle="modal" data-bs-target="#uploadModal">Upload file</button>
+    </div>
+</div>
+<div class="d-flex main-section-home" id="msh">
+    <div class="title-section-home p-5">
+        <h1>
+            View your <span class="innvator-span">images</span>
+        </h1>
+    </div>
+</div>
+<div class="w-100 gallery-main-section" id="msh">
+  <div class="d-flex flex-wrap">
+    {% for img in images %} 
+      <div class="img-container p-4" id="img_c_{{ img['image_id'] }}">
+        <img
+          src="data:image/{{ img['extension'] }};base64,{{ img['image_data'] }}"
+          class="shadow-1-strong rounded mb-4 img-galery"
+          alt="{{ img['image_name'] }}"
+          id="img_i_{{ img['img_id'] }}"
+        />
+        <span class="img-name">{{ img['image_name'] }}</span>
+      </div>
+    {%endfor%}
+  </div>
+    
+</div>
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Upload Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <form action="{{ url_for('upload_file') }}" method="post" id="formSubmit" enctype="multipart/form-data">
+              <input type="file" name="file" class="form-control" id="inputGroupFile02">
+              <div class="modal-footer">
+                <button type="submit" class="btn home-upload-btn" id="uploadGalleryBtn">Save changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content img-content-preview">
+      <div class="modal-body" >
+          <form action="{{ url_for('delete_file') }}" class="img-container-modal" method="post" id="modalFillId">
+              <input type="text" id="imageIdInput" name="image_id" hidden>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
